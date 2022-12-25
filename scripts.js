@@ -4,15 +4,15 @@ function Book(title, author, pageCount, beenRead) {
     this.pageCount = pageCount;
     this.beenRead = beenRead;
 
-    this.info = function() {
-        returnString =  `${title} by ${author}, ${pageCount} pages, `;
-        if(beenRead) {
+    this.info = function () {
+        let returnString = "";
+        returnString = `${title} by ${author}, ${pageCount} pages, `;
+        if (beenRead) {
             returnString += "has been read";
-        }
-        else {
+        } else {
             returnString += "not yet read";
         }
 
         return returnString;
-    }
+    };
 }
