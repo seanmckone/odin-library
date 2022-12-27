@@ -46,26 +46,26 @@ function displayBooks(library) {
         authorname.classList.toggle("author");
         authorname.textContent = `${library[i].author}`;
 
-        div.appendChild(title);
-        const br = document.createElement("br");
-        div.appendChild(br);
-        div.appendChild(authorname);
-
-        bookcard.appendChild(div);
-
         const pagecount = document.createElement("p");
         pagecount.classList.toggle("pagecount");
         pagecount.textContent = `Pages: ${library[i].pageCount}`;
 
+        const br = document.createElement("br");
+
+        div.appendChild(title);
+        div.appendChild(br);
+        div.appendChild(authorname);
+
+        bookcard.appendChild(div);
         bookcard.appendChild(pagecount);
 
         content.appendChild(bookcard);
     }
 }
 
-const book1 = new Book("Book 1", "Author 1", 234, false);
-const book2 = new Book("Book 2", "Author 2", 345, true);
-const book3 = new Book("Book 3", "Author 3", 2313, false);
+// const book1 = new Book("Book 1", "Author 1", 234, false);
+// const book2 = new Book("Book 2", "Author 2", 345, true);
+// const book3 = new Book("Book 3", "Author 3", 2313, false);
 
 addBookToLibrary(book1);
 addBookToLibrary(book2);

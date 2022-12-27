@@ -162,6 +162,11 @@ h1 {
     margin-bottom: 100px;
 }
 
+h2 {
+    margin-top: 20px;
+    font-size: 35px;
+}
+
 .content {
     display: grid;
     justify-content: center;
@@ -188,6 +193,53 @@ h1 {
     box-shadow: 0px 6px 5px 0px rgba(0, 0, 0);
     -webkit-box-shadow: 1px 6px 5px 0px rgba(0, 0, 0);
     -moz-box-shadow: 1px 6px 5px 0px rgba(0, 0, 0);
+}
+
+label {
+    font-size: 25px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="button"] {
+    background-color: #252526;
+    border-width: 0px;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    height: 30px;
+    padding-left: 5px;
+}
+
+input[type="number"] {
+    width: 125px;
+    padding-right: 10px;
+}
+
+.input_div {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 5px;
+}
+
+.addbook_form {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+}
+
+.addbook {
+    background-color: white;
+    height: 400px;
+    width: 300px;
+    border-radius: 10px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 footer {
