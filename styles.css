@@ -164,7 +164,6 @@ h1 {
 }
 
 h2 {
-    margin-top: 20px;
     font-size: 35px;
 }
 
@@ -185,6 +184,10 @@ h2 {
     box-shadow: 0px 6px 5px 0px rgba(0, 0, 0);
     -webkit-box-shadow: 1px 6px 5px 0px rgba(0, 0, 0);
     -moz-box-shadow: 1px 6px 5px 0px rgba(0, 0, 0);
+}
+
+.addbutton:hover {
+    background-color: #cfcfcf;
 }
 
 .booklist {
@@ -214,6 +217,26 @@ h2 {
     -moz-box-shadow: 1px 6px 5px 0px rgba(0, 0, 0);
 }
 
+.trashbutton {
+    cursor: pointer;
+    margin-top: 30px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    border-width: 0px;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.trashbutton:hover {
+    background-color: #cfcfcf;
+}
+
+.bookcard:hover {
+    scale: 105%;
+}
+
 label {
     font-size: 25px;
 }
@@ -222,16 +245,20 @@ input[type="text"],
 input[type="number"],
 input[type="button"],
 input[type="submit"] {
-    background-color: white;
-    border-width: 2px;
+    background-color: rgb(255, 255, 255);
+    border-width: 0px;
     border-radius: 10px;
     border-color: black;
     color: black;
     font-size: 20px;
     height: 30px;
     padding-left: 5px;
+    outline: none;
 
     /* Shadow */
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 input[type="number"] {
@@ -245,8 +272,8 @@ input[type="button"] {
 }
 
 input[type="submit"] {
-    background-color: #9be7f1;
-    color: black;
+    background-color: #252526;
+    color: white;
 }
 
 input[type="color"] {
@@ -254,10 +281,14 @@ input[type="color"] {
     height: 30px;
     background-color: white;
     border-color: black;
-    border-width: 2px;
+    border-width: 1px;
 
     border-radius: 10px;
     cursor: pointer;
+    /* Shadow */
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .input_div {
@@ -301,6 +332,31 @@ input[type="color"] {
     box-shadow: 0px 6px 5px 0px rgba(0, 0, 0);
     -webkit-box-shadow: 1px 6px 5px 0px rgba(0, 0, 0);
     -moz-box-shadow: 1px 6px 5px 0px rgba(0, 0, 0);
+}
+
+.addbookheader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.closeaddbook {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: white;
+    color: black;
+    border-width: 0px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.closeaddbook:hover {
+    background-color: #cfcfcf;
 }
 
 footer {
