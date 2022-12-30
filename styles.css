@@ -153,6 +153,7 @@ body {
     text-align: center;
     display: grid;
     grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100%;
 }
 
 h1 {
@@ -168,16 +169,13 @@ h2 {
 }
 
 .content {
-    display: grid;
-    gap: 80px;
-    grid-template-columns: 180px 1200px 180px;
-    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .booklist {
     display: grid;
     justify-content: center;
-    grid-template-rows: repeat(auto-fit, 250px);
     grid-template-columns: repeat(auto-fit, 180px);
     gap: 30px;
 }
