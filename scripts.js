@@ -31,7 +31,6 @@ function Book(title, author, pageCount, beenRead, coverColor) {
 
     this.readToggle = () => {
         this.beenRead = !this.beenRead;
-
         return this.beenRead;
     };
 }
@@ -95,9 +94,10 @@ addBookForm.addEventListener("submit", (event) => {
         addBookForm.elements.title_input.value,
         addBookForm.elements.author_input.value,
         addBookForm.elements.pagecount_input.value,
-        false,
+        addBookForm.elements.read_input.value,
         addBookForm.elements.cover_color.value
     );
+    addBookForm.reset();
     content.style.opacity = "100%";
     addBook.style.display = "none";
     addBookToLibrary(bookToSubmit);
