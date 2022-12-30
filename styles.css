@@ -219,7 +219,7 @@ h2 {
 
 .trashbutton {
     cursor: pointer;
-    margin-top: 30px;
+    margin-top: -10px;
     height: 30px;
     width: 30px;
     border-radius: 50px;
