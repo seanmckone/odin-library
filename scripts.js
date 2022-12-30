@@ -1,5 +1,10 @@
 const bookList = document.querySelector(".booklist");
+const addBook = document.querySelector(".addbook");
+const content = document.querySelector(".content");
+const addbutton = document.querySelector(".addbutton");
 const addBookForm = document.getElementById("addbook_form");
+
+addBook.style.display = "none";
 
 const myLibrary = [];
 
@@ -70,37 +75,44 @@ function displayBooks(library) {
     }
 }
 
-// addBookForm.addEventListener("submit", (event) => {
-//     event.preventDefault();
-//     const bookToSubmit = new Book(
-//         addBookForm.elements.title_input.value,
-//         addBookForm.elements.author_input.value,
-//         addBookForm.elements.pagecount_input.value,
-//         false,
-//         addBookForm.elements.cover_color.value
-//     );
-//     addBookToLibrary(bookToSubmit);
-//     displayBooks(myLibrary);
-// });
+addBookForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const bookToSubmit = new Book(
+        addBookForm.elements.title_input.value,
+        addBookForm.elements.author_input.value,
+        addBookForm.elements.pagecount_input.value,
+        false,
+        addBookForm.elements.cover_color.value
+    );
+    content.style.opacity = "100%";
+    addBook.style.display = "none";
+    addBookToLibrary(bookToSubmit);
+    displayBooks(myLibrary);
+});
 
-const book1 = new Book("Book 1", "Author 1", 234, false);
-const book2 = new Book("Book 2", "Author 2", 345, true);
-const book3 = new Book("Book 3", "Author 3", 2313, false);
+addbutton.addEventListener("click", () => {
+    content.style.opacity = "20%";
+    addBook.style.display = "block";
+});
 
-addBookToLibrary(book1);
-addBookToLibrary(book2);
-addBookToLibrary(book3);
-addBookToLibrary(book1);
-addBookToLibrary(book2);
-addBookToLibrary(book3);
-addBookToLibrary(book1);
-addBookToLibrary(book2);
-addBookToLibrary(book3);
-addBookToLibrary(book1);
-addBookToLibrary(book2);
-addBookToLibrary(book3);
-addBookToLibrary(book1);
-addBookToLibrary(book2);
-addBookToLibrary(book3);
+// const book1 = new Book("Book 1", "Author 1", 234, false);
+// const book2 = new Book("Book 2", "Author 2", 345, true);
+// const book3 = new Book("Book 3", "Author 3", 2313, false);
+
+// addBookToLibrary(book1);
+// addBookToLibrary(book2);
+// addBookToLibrary(book3);
+// addBookToLibrary(book1);
+// addBookToLibrary(book2);
+// addBookToLibrary(book3);
+// addBookToLibrary(book1);
+// addBookToLibrary(book2);
+// addBookToLibrary(book3);
+// addBookToLibrary(book1);
+// addBookToLibrary(book2);
+// addBookToLibrary(book3);
+// addBookToLibrary(book1);
+// addBookToLibrary(book2);
+// addBookToLibrary(book3);
 
 displayBooks(myLibrary);
