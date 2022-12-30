@@ -1,12 +1,14 @@
-const content = document.querySelector(".content");
+const content = document.querySelector(".booklist");
+const addBookForm = document.getElementById("addbook_form");
 
 const myLibrary = [];
 
-function Book(title, author, pageCount, beenRead) {
+function Book(title, author, pageCount, beenRead, coverColor) {
     this.title = title;
     this.author = author;
     this.pageCount = pageCount;
     this.beenRead = beenRead;
+    this.coverColor = coverColor;
 
     this.info = () => {
         let returnString = "";
@@ -32,8 +34,13 @@ function addBookToLibrary(book) {
 }
 
 function displayBooks(library) {
+    while (content.hasChildNodes()) {
+        content.removeChild(content.lastChild);
+    }
+
     for (let i = 0; i < library.length; i += 1) {
         const bookcard = document.createElement("div");
+        bookcard.style.backgroundColor = library[i].coverColor;
         bookcard.classList.toggle("bookcard");
 
         const div = document.createElement("div");
@@ -63,12 +70,15 @@ function displayBooks(library) {
     }
 }
 
-// const book1 = new Book("Book 1", "Author 1", 234, false);
-// const book2 = new Book("Book 2", "Author 2", 345, true);
-// const book3 = new Book("Book 3", "Author 3", 2313, false);
-
-addBookToLibrary(book1);
-addBookToLibrary(book2);
-addBookToLibrary(book3);
-
-displayBooks(myLibrary);
+addBookForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const bookToSubmit = new Book(
+        addBookForm.elements.title_input.value,
+        addBookForm.elements.author_input.value,
+        addBookForm.elements.pagecount_input.value,
+        false,
+        addBookForm.elements.cover_color.value
+    );
+    addBookToLibrary(bookToSubmit);
+    displayBooks(myLibrary);
+});

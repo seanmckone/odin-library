@@ -16,29 +16,25 @@
             <h1>My Library</h1>
         </header>
         <div class="content">
-            <div class="bookcard">
-                <div>
-                    <p class="title">Book 1</p>
-                    <br />
-                    <p class="author">Author 1</p>
-                </div>
-                <p class="pagecount">Pages: #</p>
-            </div>
             <div class="addbook">
                 <h2>Add Book</h2>
-                <form action="" class="addbook_form">
+                <form action="/addbook" method="post" id="addbook_form">
                     <div class="input_div">
                         <label for="title_input">Title</label>
-                        <input type="text" id="title_input" />
+                        <input type="text" id="title_input" required />
                     </div>
                     <div class="input_div">
                         <label for="author_input">Author</label>
-                        <input type="text" id="author_input" />
+                        <input type="text" id="author_input" required />
                     </div>
                     <div class="input_div_2">
                         <div class="input_div">
                             <label for="pagecount_input">Page Count</label>
-                            <input type="number" id="pagecount_input" />
+                            <input
+                                type="number"
+                                id="pagecount_input"
+                                required
+                            />
                         </div>
                         <div class="input_div">
                             <label for="read_input">Read?</label>
@@ -47,15 +43,15 @@
                     </div>
                     <div class="input_div">
                         <label for="cover_color">Cover Color</label>
-                        <input type="color" id="cover_color" />
+                        <input type="color" id="cover_color" value="#ffffff" />
                     </div>
                     <div class="input_div">
                         <input type="submit" id="submit" />
                     </div>
                 </form>
             </div>
+            <div class="booklist"></div>
         </div>
-
         <footer>
             <p>Sean M. 2023</p>
         </footer>
