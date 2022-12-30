@@ -60,6 +60,10 @@ function displayBooks(library) {
             pagecount.classList.toggle("pagecount");
             pagecount.textContent = `Pages: ${library[i].pageCount}`;
 
+            const beenread = document.createElement("p");
+            beenread.classList.toggle("beenread");
+            beenread.textContent = `Read?: ${library[i].beenRead}`;
+
             const br = document.createElement("br");
 
             div.appendChild(title);
@@ -68,6 +72,7 @@ function displayBooks(library) {
 
             bookcard.appendChild(div);
             bookcard.appendChild(pagecount);
+            bookcard.appendChild(beenread);
 
             const trashbutton = document.createElement("button");
             trashbutton.classList.toggle("trashbutton");
@@ -90,11 +95,12 @@ function addBookToLibrary(book) {
 
 addBookForm.addEventListener("submit", (event) => {
     event.preventDefault();
+
     const bookToSubmit = new Book(
         addBookForm.elements.title_input.value,
         addBookForm.elements.author_input.value,
         addBookForm.elements.pagecount_input.value,
-        addBookForm.elements.read_input.value,
+        addBookForm.elements.read_input.checked,
         addBookForm.elements.cover_color.value
     );
     addBookForm.reset();
