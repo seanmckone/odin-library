@@ -74,6 +74,9 @@ function displayBooks(library) {
             bookcard.appendChild(pagecount);
             bookcard.appendChild(beenread);
 
+            const buttondiv = document.createElement("div");
+            buttondiv.classList.toggle("buttondiv");
+
             const trashbutton = document.createElement("button");
             trashbutton.classList.toggle("trashbutton");
 
@@ -86,7 +89,23 @@ function displayBooks(library) {
                 myLibrary[i].toDisplay = false;
                 bookcard.style.display = "none";
             });
-            bookcard.appendChild(trashbutton);
+            buttondiv.appendChild(trashbutton);
+
+            const readbutton = document.createElement("button");
+            readbutton.classList.toggle("readbutton");
+
+            const readimage = document.createElement("img");
+            readimage.classList.toggle("readimage");
+            readimage.src = "/images/readbook.png";
+            readbutton.appendChild(readimage);
+
+            readbutton.addEventListener("click", () => {
+                library[i].readToggle();
+                beenread.textContent = `Read?: ${library[i].beenRead}`;
+            });
+            buttondiv.appendChild(readbutton);
+
+            bookcard.appendChild(buttondiv);
 
             bookList.appendChild(bookcard);
         }

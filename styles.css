@@ -217,10 +217,17 @@ h2 {
     -moz-box-shadow: 1px 6px 5px 0px rgba(0, 0, 0);
 }
 
-.trashbutton {
-    cursor: pointer;
+.buttondiv {
+    display: flex;
+    justify-content: space-between;
     margin-top: -17px;
     margin-left: -20px;
+    margin-right: 10px;
+}
+
+.trashbutton,
+.readbutton {
+    cursor: pointer;
     height: 40px;
     width: 40px;
     border-radius: 50px;
@@ -234,11 +241,13 @@ h2 {
     justify-content: center;
 }
 
-.trashimage {
+.trashimage,
+.readimage {
     width: 30px;
 }
 
-.trashbutton:hover {
+.trashbutton:hover,
+.readbutton:hover {
     background-color: #cfcfcf;
 }
 
