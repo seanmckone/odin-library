@@ -76,7 +76,12 @@ function displayBooks(library) {
 
             const trashbutton = document.createElement("button");
             trashbutton.classList.toggle("trashbutton");
-            trashbutton.textContent = "t";
+
+            const trashimage = document.createElement("img");
+            trashimage.classList.toggle("trashimage");
+            trashimage.src = "/images/bin.png";
+            trashbutton.appendChild(trashimage);
+
             trashbutton.addEventListener("click", () => {
                 myLibrary[i].toDisplay = false;
                 bookcard.style.display = "none";
