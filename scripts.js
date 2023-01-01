@@ -84,7 +84,7 @@ function displayBooks(library) {
 
             const trashimage = document.createElement("img");
             trashimage.classList.toggle("trashimage");
-            trashimage.src = "./images/bin.png";
+            trashimage.src = "../images/bin.png";
             trashbutton.appendChild(trashimage);
 
             trashbutton.addEventListener("click", () => {
@@ -98,7 +98,7 @@ function displayBooks(library) {
 
             const readimage = document.createElement("img");
             readimage.classList.toggle("readimage");
-            readimage.src = "./images/readbook.png";
+            readimage.src = "../images/readbook.png";
             readbutton.appendChild(readimage);
 
             readbutton.addEventListener("click", () => {
