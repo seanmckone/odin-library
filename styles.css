@@ -200,6 +200,7 @@ h2 {
 .bookcard {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 30px;
     padding-top: 30px;
     padding-left: 30px;
@@ -217,12 +218,16 @@ h2 {
     -moz-box-shadow: 1px 6px 5px 0px rgba(0, 0, 0);
 }
 
+.infodiv p {
+    margin-bottom: 10px;
+}
+
 .buttondiv {
     display: flex;
     justify-content: space-between;
-    margin-top: -17px;
     margin-left: -20px;
     margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 .trashbutton,

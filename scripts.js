@@ -46,7 +46,8 @@ function displayBooks(library) {
             bookcard.style.backgroundColor = library[i].coverColor;
             bookcard.classList.toggle("bookcard");
 
-            const div = document.createElement("div");
+            const infodiv = document.createElement("div");
+            infodiv.classList.toggle("infodiv");
 
             const title = document.createElement("p");
             title.classList.toggle("title");
@@ -62,17 +63,18 @@ function displayBooks(library) {
 
             const beenread = document.createElement("p");
             beenread.classList.toggle("beenread");
-            beenread.textContent = `Read?: ${library[i].beenRead}`;
+            if (library[i].beenRead) {
+                beenread.textContent = `Read?: Yes`;
+            } else {
+                beenread.textContent = `Read?: No`;
+            }
 
-            const br = document.createElement("br");
+            infodiv.appendChild(title);
+            infodiv.appendChild(authorname);
+            infodiv.appendChild(pagecount);
+            infodiv.appendChild(beenread);
 
-            div.appendChild(title);
-            div.appendChild(br);
-            div.appendChild(authorname);
-
-            bookcard.appendChild(div);
-            bookcard.appendChild(pagecount);
-            bookcard.appendChild(beenread);
+            bookcard.appendChild(infodiv);
 
             const buttondiv = document.createElement("div");
             buttondiv.classList.toggle("buttondiv");
@@ -101,7 +103,11 @@ function displayBooks(library) {
 
             readbutton.addEventListener("click", () => {
                 library[i].readToggle();
-                beenread.textContent = `Read?: ${library[i].beenRead}`;
+                if (library[i].beenRead) {
+                    beenread.textContent = `Read?: Yes`;
+                } else {
+                    beenread.textContent = `Read?: No`;
+                }
             });
             buttondiv.appendChild(readbutton);
 
